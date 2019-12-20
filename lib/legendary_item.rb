@@ -1,0 +1,3 @@
+class LegendaryItem < Item
+  
+end
