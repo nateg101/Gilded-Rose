@@ -1,7 +1,7 @@
 require 'legendary_item'
 
 describe LegendaryItem do
-  subject(:legendary_item) { described_class.new("Sulfuras", 0, 80) }
+  subject(:legendary_item) { described_class.new("Sulfuras") }
 
   context '#quality' do
     it 'knows its quality' do
