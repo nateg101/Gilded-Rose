@@ -2,7 +2,7 @@ require 'conjured_item'
 
 describe ConjuredItem do
   subject(:conjured_item) { described_class.new('Mana Cake', 3, 6) }
-  subject(:one_quality_item) { described_class.new('Mana Cake',3, 1)}
+  subject(:one_quality_item) { described_class.new('Mana Cake', 3, 1) }
   subject(:negative_sell_in_item) { described_class.new('Mana Cake', -1, 6) }
 
   context '#quality' do
