@@ -2,7 +2,7 @@ require 'standard_item'
 
 describe StandardItem do
   subject(:standard_item) { described_class.new('+5 Dexterity Vest', 20, 10) }
-  subject(:zero_quality_item) { described_class.new('+5 Dexterity Vest', 1, 0) }
+  subject(:low_quality_item) { described_class.new('+5 Dexterity Vest', -1, 1) }
   subject(:negative_sell_in) { described_class.new('+5 Dexterity Vest', -1, 3) }
 
   context '#quality' do
@@ -15,14 +15,14 @@ describe StandardItem do
       expect(standard_item.quality).to eq 9
     end
 
-    it 'does not reduce quality to < 0' do
-      zero_quality_item.update_properties
-      expect(zero_quality_item.quality).to eq 0
-    end
-
     it 'reduces quality at double the pace after sell by date expired' do
       negative_sell_in.update_properties
       expect(negative_sell_in.quality).to eq 1
+    end
+
+    it 'does not reduce quality to < 0' do
+      low_quality_item.update_properties
+      expect(low_quality_item.quality).to eq 0
     end
   end
 
