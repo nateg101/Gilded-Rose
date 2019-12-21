@@ -7,5 +7,10 @@ describe TimeDependentItems do
     it 'knows its quality' do
       expect(backstage_pass.quality).to eq 20
     end
+
+    it 'increases in quality by 1 when sell_in > 10' do
+      backstage_pass.update_properties
+      expect(backstage_pass.quality).to eq 21
+    end
   end
 end
