@@ -14,9 +14,10 @@ class TimeDependentItems < Item
   end
 
   def increase_quality
-    return 1 if @quality == 49 || @sell_in.positive?
+    return 1 if @quality == 49 || @sell_in > 10
+    return 2 if @quality == 48 || @sell_in > 5
 
-    2
+    3
   end
 
 end
