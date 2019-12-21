@@ -3,9 +3,9 @@ require 'increase_value_item'
 describe IncreaseValueItem do
 
   context 'aged brie type items' do
-    subject(:aged_brie) { described_class.new('Aged Brie',2, 0) }
-    subject(:negative_sell_in_item) { described_class.new('Aged Brie',-1, 4) }
-    subject(:high_quality_brie) { described_class.new('Aged Brie',2, 50) }
+    subject(:aged_brie) { described_class.new('Aged Brie', 2, 0) }
+    subject(:negative_sell_in_item) { described_class.new('Aged Brie', -1, 4) }
+    subject(:high_quality_brie) { described_class.new('Aged Brie', 2, 50) }
 
     describe '#quality' do
       it 'knows it own quality' do
