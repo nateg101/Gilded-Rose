@@ -8,13 +8,12 @@ class IncreaseValueItem < Item
   end
 
   def update_quality
-
+    return if quality >= 50
     @quality += increase_quality
   end
 
   def increase_quality
-    return 1 if @quality == 1 || @sell_in.positive?
-
+    return 1 if @quality == 49 || @sell_in.positive?
     2
   end
 
