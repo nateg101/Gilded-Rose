@@ -3,7 +3,7 @@ require 'time_dependent_items'
 describe TimeDependentItems do
   subject(:backstage_pass) { described_class.new("Backstage passes", 15, 20) }
   subject(:backstage_pass_9days) { described_class.new("Backstage passes", 9, 20) }
-  subject(:backstage_pass_4days) { described_class.new("Backstage passes", 9, 20) }
+  subject(:backstage_pass_4days) { described_class.new("Backstage passes", 4, 20) }
 
   context '#quality' do
     it 'knows its quality' do
