@@ -8,7 +8,8 @@ class TimeDependentItems < Item
   private
 
   def update_quality
-    return if quality >= 50
+    return @quality = 0 unless sell_in > 0
+    return if @quality >= 50
 
     @quality += increase_quality
   end
