@@ -25,7 +25,7 @@ describe GildedRose do
   end
 
   let (:legendary_item) do
-    double(:legendary_item, update_properties: nil, class: LegendaryItemDouble)
+    double(:legendary_item, update_properties: nil, class: LegendaryItem)
   end
 
   subject(:gilded_rose) do
@@ -53,6 +53,11 @@ describe GildedRose do
 
     it 'calls update_properties on standard_item' do
       expect(standard_item).to receive (:update_properties)
+      gilded_rose.update_quality
+    end
+
+    it 'does not call update_properties on legendary_item' do
+      expect(legendary_item).not_to receive (:update_properties)
       gilded_rose.update_quality
     end
   end
