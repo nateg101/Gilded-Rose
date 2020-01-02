@@ -17,14 +17,10 @@ class ConjuredItem < Item
   end
 
   def decrease_quality
-    if @quality < 2 && @sell_in.positive?
-      return @quality
-    elsif @quality < 4 && @sell_in.negative?
-      return @quality
-    elsif @quality == 2 || @sell_in.positive?
-      return 2
-    else
-      4
-    end
+    return @quality if @quality < 2 && @sell_in.positive?
+    return @quality if @quality < 4 && @sell_in.negative?
+    return 2 if @quality == 2 || @sell_in.positive?
+
+    4
   end
 end

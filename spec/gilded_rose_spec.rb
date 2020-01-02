@@ -33,31 +33,30 @@ describe GildedRose do
     described_class.new(items)
   end
 
-
   context "#update_quality" do
 
     it 'calls update_properties on conjured_item' do
-      expect(conjured_item).to receive (:update_properties)
+      expect(conjured_item).to receive :update_properties
       gilded_rose.update_quality
     end
 
     it 'calls update_properties on increase_value_item' do
-      expect(increase_value_item).to receive (:update_properties)
+      expect(increase_value_item).to receive :update_properties
       gilded_rose.update_quality
     end
 
     it 'calls update_properties on time_dependent_item' do
-      expect(time_dependent_item).to receive (:update_properties)
+      expect(time_dependent_item).to receive :update_properties
       gilded_rose.update_quality
     end
 
     it 'calls update_properties on standard_item' do
-      expect(standard_item).to receive (:update_properties)
+      expect(standard_item).to receive :update_properties
       gilded_rose.update_quality
     end
 
     it 'does not call update_properties on legendary_item' do
-      expect(legendary_item).not_to receive (:update_properties)
+      expect(legendary_item).not_to receive :update_properties
       gilded_rose.update_quality
     end
   end
