@@ -7,11 +7,18 @@ The task was to add a new feature to allow the inn to sell a new category of ite
 ## Usage
 
 `git clone git@github.com:nateg101/Gilded-Rose.git`
+`bundle install`
 
-Manage inventory:
+### Run Tests & Linting
+
+Tests - `rspec`
+Linting -  `rubocop`
+
+### How to Manage Inventory
 
 Open a Ruby REPL
-Require the following, this will give you access to all items that may be stocked in the Gilded Rose:
+
+Type the following, this will give you access to all items that may be stocked in the Gilded Rose:
 
 * `require './lib/gilded_rose'`
 * `require './lib/item'`
@@ -59,4 +66,4 @@ From this I decided that the best course of action would be as follows:
 2. Create a class for item type e.g. `ConjuredItem` or `StandardItem`, these items would inherit from the Item class, which would keep the code as DRY as possible.
 3. Where necessary the various item classes would have methods in to handle how their quality changed over time, as stated in the requirements.
 4. Once these item classes were created and working as intended, I could then refactor the GildedRose code.
-5. It became apparent that the `update_quality` method in the GildedRose class needed to iterate through the items list and call `update_properties` on each item. The only exception to this was for Lengedary Items, whose quality never changes. Therefore I refactored the `update_quality` method to deliver this functionality. 
+5. It became apparent that the `update_quality` method in the GildedRose class needed to iterate through the items list and call `update_properties` on each item. The only exception to this was for Lengedary Items, whose quality never changes. Therefore I refactored the `update_quality` method to deliver this functionality.
