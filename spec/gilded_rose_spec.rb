@@ -1,5 +1,4 @@
 require 'gilded_rose'
-require 'item'
 
 describe GildedRose do
 
@@ -36,11 +35,6 @@ describe GildedRose do
 
 
   context "#update_quality" do
-    it "does not change the name" do
-      items = [Item.new("foo", 0, 0)]
-      GildedRose.new(items).update_quality()
-      expect(items[0].name).to eq "foo"
-    end
 
     it 'calls update_properties on conjured_item' do
       expect(conjured_item).to receive (:update_properties)
